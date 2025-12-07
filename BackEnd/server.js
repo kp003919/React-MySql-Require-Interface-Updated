@@ -223,6 +223,7 @@ app.get("/studentsSortedByMark", (req, res) => {
   });
 });
 
+// REST APIs 
 // get students with mark greater than 90
 app.get("/topStudents", (req, res) => {  
   const sql = "SELECT * FROM student_record WHERE mark >= 80";     
@@ -267,6 +268,8 @@ app.get("/distinctionStudents", (req, res) => {
     res.json(results);
   });
 });
+
+// more APIs
 app.get("/studentsAbove/:mark", (req, res) => {
   const { mark } = req.params;
   const sql = "SELECT * FROM student_record WHERE mark >= ?";   
@@ -275,8 +278,6 @@ app.get("/studentsAbove/:mark", (req, res) => {
     res.json(results);
   });
 }); 
-
-
 
 // more endpoints can be added here...
 
